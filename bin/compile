@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+echo "-----> Installing METIS 5.1.0"
+# change to the the BUILD_DIR ($1)
+cd $1
+# download the binary (-O) silently (-s)
+curl http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz -s -O -ssl3
+# make a directory to untar (like unzip) the binary
+mkdir -p vendor/metis
+# untar the binary to the directory we want
+tar -C vendor/metis -xvf metis-5.1.0.tar.gz
+
+cd vendor/metis
+make config shared=1
+make
+
+export METIS_DLL=vendor/metis/build/Darwin-x86_64/libmetis/libmetis.dylib

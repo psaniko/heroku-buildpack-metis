@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+echo "METIS"
+exit 0
