@@ -2,5 +2,5 @@
 cat <<EOF
 ---
 config_vars:
-PATH: $PATH:/app/vendor/metis/bin
+METIS_DLL: /app/vendor/metis/metis-5.1.0/build/Linux-x86_64/libmetis/libmetis.so
 EOF

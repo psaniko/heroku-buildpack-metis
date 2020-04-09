@@ -8,13 +8,7 @@ curl http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz -s -O -s
 mkdir -p vendor/metis
 # untar the binary to the directory we want
 tar -C vendor/metis -xvf metis-5.1.0.tar.gz
-
-ls
+# make library
 cd vendor/metis/metis-5.1.0
-
-echo "Running make file..."
-
 make config shared=1
 make
-
-export METIS_DLL=vendor/metis/metis-5.1.0/build/Darwin-x86_64/libmetis/libmetis.dylib
